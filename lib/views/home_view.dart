@@ -1,5 +1,8 @@
-import "package:finance_app/widgets/custom_app_bar.dart";
-import "package:finance_app/widgets/total_value.dart";
+// ignore_for_file: unused_import
+
+import "package:finance_application/widgets/action_buttons_widget.dart";
+import "package:finance_application/widgets/custom_app_bar.dart";
+import "package:finance_application/widgets/total_value.dart";
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import 'package:iconsax/iconsax.dart';
@@ -31,6 +34,8 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           SizedBox(height: 20),
                           const TotalValueSection(),
+                          SizedBox(height: 24),
+                          ActionButtonRow(),
                         ],
                       ),
                     ),
