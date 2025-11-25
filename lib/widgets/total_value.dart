@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 class TotalValueSection extends StatelessWidget {
-  const TotalValueSection({super.key});
+  const TotalValueSection({super.key}); 
 
   @override
   Widget build(BuildContext context) {
@@ -54,3 +54,5 @@ class TotalValueSection extends StatelessWidget {
     );
   }
 }
+
+//example
