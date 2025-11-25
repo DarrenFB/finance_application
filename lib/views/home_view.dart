@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import "package:finance_app/widgets/action_buttons_widget.dart";
 import "package:finance_app/widgets/custom_app_bar.dart";
 import "package:finance_app/widgets/total_value.dart";
