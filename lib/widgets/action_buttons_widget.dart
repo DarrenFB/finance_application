@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -5,12 +7,17 @@ class ActionButton extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool isHighlight;
+  final double height;
+  
+  final TextStyle textStyle;
 
   const ActionButton({
     super.key,
     required this.icon,
     required this.label,
     this.isHighlight = false,
+    this.textStyle = const TextStyle(),
+    this.height = 90,
   });
 
   @override
@@ -49,36 +56,80 @@ class ActionButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      spacing: 5,
+    return Column(
       children: [
-        Expanded(
-          child: ActionButton(
-            icon: Iconsax.add,
-            label: "Deposit",
-            isHighlight: true,
-          ),
+        Row(
+          children: [
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.add,
+                label: "Deposit",
+                isHighlight: true,
+                textStyle: TextStyle(
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.send,
+                label: "Send",
+                textStyle: TextStyle(
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.document,
+                label: "Earn",
+                textStyle: TextStyle(
+                  fontSize: 12,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.more,
+                label: "Swap",
+                textStyle: TextStyle(
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          ],
         ),
-        Expanded(
-          child: ActionButton(
-            icon: Iconsax.send,
-            label: "Send",
-          ),
+        const SizedBox(height: 8),
+        
+        Row(
+          children: [
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.more,
+                label: "USD",
+                textStyle: TextStyle(
+                  fontSize: 100,
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: ActionButton(
+                icon: Iconsax.wallet,
+                label: "EURO",
+                textStyle: TextStyle(
+                  fontSize: 100,
+                ),
+                // height: 180,
+              ),
+            ),
+          ],
         ),
-        Expanded(
-          child: ActionButton(
-            icon: Iconsax.document,
-            label: "Earn",
-          ),
-        ),
-        Expanded(
-          child: ActionButton(
-            icon: Iconsax.more,
-            label: "Swap",
-          ),
-        ),
+        
       ],
     );
-    // return Row(children: [],)
   }
 }
